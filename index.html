@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To My Love ❤️ - Heart Explosion Birthday</title>
+    <title>Happy Birthday My Love ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -237,25 +237,32 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: rgba(255, 126, 179, 0.2);
+            background: rgba(255, 126, 179, 0.5);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 100;
-            border: 2px solid rgba(255, 126, 179, 0.5);
+            border: 2px solid rgba(255, 126, 179, 0.8);
             transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 126, 179, 0.5);
         }
         
         .music-control:hover {
-            background: rgba(255, 126, 179, 0.3);
+            background: rgba(255, 126, 179, 0.7);
             transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 126, 179, 0.8);
         }
         
         .music-control i {
             font-size: 24px;
-            color: #ff7eb3;
+            color: white;
+        }
+        
+        .music-control.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
         .chinese-decoration {
@@ -297,6 +304,30 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #a7c7e7;
             font-size: 1rem;
+        }
+        
+        /* Audio notification */
+        .audio-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: rgba(255, 126, 179, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            z-index: 101;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 200px;
+            text-align: center;
+        }
+        
+        .audio-notification.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Enhanced Animations */
@@ -474,6 +505,20 @@
             .heart-giant { font-size: 60px; }
             .heart-large { font-size: 45px; }
             .heart-medium { font-size: 30px; }
+            
+            .music-control {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .audio-notification {
+                bottom: 80px;
+                right: 20px;
+                max-width: 150px;
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -534,55 +579,53 @@
     
     <div class="container">
         <div class="title">
-            <h1 class="main-title">To My Beloved</h1>
-            <p class="subtitle">A heart-filled surprise made just for you</p>
-            <p class="date">January 20th ❤️</p>
+            <h1 class="main-title">Happy Birthday My Love!</h1>
+            <p class="subtitle">A heart-filled birthday surprise made just for you</p>
+            <p class="date">January 20th ❤️ The most special day of the year</p>
         </div>
         
         <div class="gift-section">
             <button class="magic-button" id="magicButton">
-                <i class="fas fa-heart"></i> Open Your Heart Surprise
+                <i class="fas fa-heart"></i> Click for Birthday Hearts!
             </button>
             <div class="heart-container" id="heartContainer"></div>
         </div>
         
         <div class="message-container" id="messageContainer">
-            <h2 class="message-title">My Dearest Love,</h2>
+            <h2 class="message-title">To The Love of My Life,</h2>
             
-            <p class="message-text">There was a time when my world felt like an endless winter, cold and colorless. I wandered through days feeling alone, as if I was watching life from behind a frosted glass window.</p>
+            <p class="message-text">On this special day, I want you to know how incredibly grateful I am that you were born. You came into this world on January 20th, and you came into my life when I needed light the most.</p>
             
-            <p class="message-text">Then you arrived, not with fanfare or dramatic entrance, but quietly, like the first sunrise after a long night. You didn't just walk into my life; you breathed warmth into it.</p>
+            <p class="message-text">There was a time when birthdays were just dates on a calendar to me. But now, January 20th is the day I celebrate the existence of the most beautiful soul I've ever known.</p>
             
-            <p class="message-text highlight">I was lonely. I was depressed. The world felt heavy, and I had forgotten what happiness truly meant.</p>
+            <p class="message-text highlight">You taught me that love isn't about finding the perfect person, but about seeing an imperfect person perfectly.</p>
             
-            <p class="message-text">But you, my love, you changed everything. You didn't fix me—you showed me that I wasn't broken. You didn't save me—you taught me how to save myself. With your smile, your laughter, your gentle presence, you turned my grayscale world into a symphony of colors.</p>
+            <p class="message-text">Every moment with you has been a gift. Every laugh, every conversation, every quiet moment together has filled my life with meaning I never knew existed.</p>
             
-            <p class="message-text">Every moment with you feels like a gift I don't deserve but will cherish forever. You are the miracle I never knew to ask for, the answer to questions I was too afraid to voice.</p>
+            <p class="message-text">On your birthday, I wish for you all the happiness you've brought into my life. May your year be filled with as much joy as you've given me, as much love as you've shown me, and as much light as you've brought into my world.</p>
             
-            <p class="message-text">On your birthday, I want you to know that you are the greatest gift I've ever received. You transformed my life when I needed it most, and for that, I will be eternally grateful.</p>
+            <p class="message-text">You deserve the universe and more, but for today, please accept this digital bouquet of hearts, each one representing a reason why I love you, a memory I cherish, or a dream I have for our future.</p>
             
-            <p class="message-text highlight">Happy Birthday to the woman who taught me how to feel alive again. You are my sunrise, my warmth, my everything.</p>
+            <p class="message-text highlight">Happy Birthday, my love. Today and every day, my heart celebrates you.</p>
             
-            <div class="signature">Forever Yours</div>
+            <div class="signature">Forever Yours ❤️</div>
         </div>
         
         <div class="footer">
-            <p>Made with infinite love and countless hearts</p>
-            <p>This digital gift is yours forever, just like my heart</p>
+            <p>Each heart in this animation represents a reason why I love you</p>
+            <p>Happy Birthday from all the pieces of my heart to yours</p>
         </div>
+    </div>
+    
+    <!-- Audio notification -->
+    <div class="audio-notification" id="audioNotification">
+        Click the button to start your birthday surprise!
     </div>
     
     <!-- Music control -->
     <div class="music-control" id="musicControl">
         <i class="fas fa-play" id="musicIcon"></i>
     </div>
-    
-    <!-- Audio element for background music -->
-    <audio id="bgMusic" loop>
-        <source src="https://audio-variant-previews.envatousercontent.com/m4a/2f/6b/fe/d6/15/v1_e11/e117tyxf.m4a" type="audio/mpeg">
-        <!-- Fallback music source -->
-        <source src="https://assets.mixkit.co/music/preview/mixkit-celestial-recognition-919.mp3" type="audio/mpeg">
-    </audio>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -595,27 +638,110 @@
             const messageContainer = document.getElementById('messageContainer');
             const musicControl = document.getElementById('musicControl');
             const musicIcon = document.getElementById('musicIcon');
-            const bgMusic = document.getElementById('bgMusic');
+            const audioNotification = document.getElementById('audioNotification');
+            
+            // Create Audio element with LOCAL tones (no external URLs needed)
+            const bgMusic = new Audio();
+            
+            // Generate happy birthday melody using Web Audio API
+            function generateBirthdayMelody() {
+                try {
+                    // Create audio context
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Happy Birthday melody notes (simplified version)
+                    const notes = [
+                        {note: 'C4', duration: 0.5},
+                        {note: 'C4', duration: 0.5},
+                        {note: 'D4', duration: 1},
+                        {note: 'C4', duration: 1},
+                        {note: 'F4', duration: 1},
+                        {note: 'E4', duration: 2},
+                        {note: 'C4', duration: 0.5},
+                        {note: 'C4', duration: 0.5},
+                        {note: 'D4', duration: 1},
+                        {note: 'C4', duration: 1},
+                        {note: 'G4', duration: 1},
+                        {note: 'F4', duration: 2},
+                        {note: 'C4', duration: 0.5},
+                        {note: 'C4', duration: 0.5},
+                        {note: 'C5', duration: 1},
+                        {note: 'A4', duration: 1},
+                        {note: 'F4', duration: 1},
+                        {note: 'E4', duration: 1},
+                        {note: 'D4', duration: 2},
+                        {note: 'A#4', duration: 0.5},
+                        {note: 'A#4', duration: 0.5},
+                        {note: 'A4', duration: 1},
+                        {note: 'F4', duration: 1},
+                        {note: 'G4', duration: 1},
+                        {note: 'F4', duration: 2}
+                    ];
+                    
+                    // Note frequencies
+                    const noteFreq = {
+                        'C4': 261.63, 'D4': 293.66, 'E4': 329.63, 'F4': 349.23,
+                        'G4': 392.00, 'A4': 440.00, 'A#4': 466.16, 'C5': 523.25
+                    };
+                    
+                    let currentTime = audioContext.currentTime;
+                    
+                    // Play each note
+                    notes.forEach((noteData, index) => {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.value = noteFreq[noteData.note];
+                        oscillator.type = 'sine';
+                        
+                        // Fade in/out for smoother sound
+                        gainNode.gain.setValueAtTime(0, currentTime);
+                        gainNode.gain.linearRampToValueAtTime(0.1, currentTime + 0.01);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + noteData.duration);
+                        
+                        oscillator.start(currentTime);
+                        oscillator.stop(currentTime + noteData.duration);
+                        
+                        currentTime += noteData.duration;
+                    });
+                    
+                    return audioContext;
+                } catch (error) {
+                    console.log("Audio context not supported, using simple beep");
+                    return null;
+                }
+            }
+            
             let isMusicPlaying = false;
             let heartsCreated = 0;
+            let audioEnabled = false;
+            let audioContext = null;
+            
+            // Show audio notification
+            function showAudioNotification(message) {
+                audioNotification.textContent = message;
+                audioNotification.classList.add('show');
+                
+                setTimeout(() => {
+                    audioNotification.classList.remove('show');
+                }, 3000);
+            }
             
             // Create stars for background
             function createStars() {
                 const starsContainer = document.getElementById('stars');
-                const starCount = 200; // Increased star count
+                const starCount = 200;
                 
                 for (let i = 0; i < starCount; i++) {
                     const star = document.createElement('div');
                     star.classList.add('star');
                     
-                    // Random position
                     const x = Math.random() * 100;
                     const y = Math.random() * 100;
-                    
-                    // Random size
                     const size = Math.random() * 3 + 1;
-                    
-                    // Random twinkle delay
                     const delay = Math.random() * 3;
                     
                     star.style.left = `${x}%`;
@@ -628,16 +754,177 @@
                 }
             }
             
-            // Create heart animation with MANY more hearts
+            // Initialize audio system
+            function initializeAudio() {
+                // Create simple beep sound for browsers that don't support Web Audio
+                const createBeep = () => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 440;
+                    oscillator.type = 'sine';
+                    
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
+                    
+                    return { oscillator, gainNode };
+                };
+                
+                // Unlock audio on user interaction
+                const unlockAudio = () => {
+                    try {
+                        if (!audioContext) {
+                            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        }
+                        
+                        // Resume if suspended
+                        if (audioContext.state === 'suspended') {
+                            audioContext.resume();
+                        }
+                        
+                        // Play a silent sound to unlock audio
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.value = 1; // Very low frequency
+                        gainNode.gain.value = 0.001; // Almost silent
+                        
+                        oscillator.start();
+                        setTimeout(() => oscillator.stop(), 100);
+                        
+                        audioEnabled = true;
+                        musicControl.classList.remove('disabled');
+                        showAudioNotification('Audio ready! 🎵');
+                        
+                        return true;
+                    } catch (error) {
+                        console.log("Audio unlock failed:", error);
+                        showAudioNotification('Click to enable sound');
+                        return false;
+                    }
+                };
+                
+                // Try to unlock on user interaction
+                const unlockOnInteraction = () => {
+                    if (unlockAudio()) {
+                        document.removeEventListener('click', unlockOnInteraction);
+                        document.removeEventListener('touchstart', unlockOnInteraction);
+                    }
+                };
+                
+                // Add event listeners
+                document.addEventListener('click', unlockOnInteraction);
+                document.addEventListener('touchstart', unlockOnInteraction);
+                
+                // Also try the magic button
+                magicButton.addEventListener('click', unlockAudio);
+                
+                // Try immediately
+                unlockAudio();
+            }
+            
+            // Play birthday melody
+            function playBirthdayMelody() {
+                if (!audioEnabled || !audioContext) {
+                    showAudioNotification('Click the main button first!');
+                    return;
+                }
+                
+                if (isMusicPlaying) {
+                    // Stop music
+                    if (audioContext) {
+                        audioContext.suspend();
+                    }
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                    isMusicPlaying = false;
+                    showAudioNotification('Music paused');
+                } else {
+                    // Play music
+                    if (audioContext.state === 'suspended') {
+                        audioContext.resume();
+                    }
+                    
+                    // Generate the birthday melody
+                    const context = generateBirthdayMelody();
+                    
+                    if (context) {
+                        musicIcon.classList.remove('fa-play');
+                        musicIcon.classList.add('fa-pause');
+                        isMusicPlaying = true;
+                        showAudioNotification('Happy Birthday! 🎂');
+                        
+                        // After melody ends, show message to click again for more
+                        setTimeout(() => {
+                            if (isMusicPlaying) {
+                                musicIcon.classList.remove('fa-pause');
+                                musicIcon.classList.add('fa-play');
+                                isMusicPlaying = false;
+                                showAudioNotification('Click music button for more!');
+                            }
+                        }, 15000);
+                    } else {
+                        // Fallback: simple beep melody
+                        try {
+                            let currentTime = audioContext.currentTime;
+                            
+                            for (let i = 0; i < 8; i++) {
+                                const oscillator = audioContext.createOscillator();
+                                const gainNode = audioContext.createGain();
+                                
+                                oscillator.connect(gainNode);
+                                gainNode.connect(audioContext.destination);
+                                
+                                oscillator.frequency.value = 440 + (i * 100);
+                                oscillator.type = 'sine';
+                                
+                                gainNode.gain.setValueAtTime(0, currentTime);
+                                gainNode.gain.linearRampToValueAtTime(0.1, currentTime + 0.05);
+                                gainNode.gain.exponentialRampToValueAtTime(0.001, currentTime + 0.3);
+                                
+                                oscillator.start(currentTime);
+                                oscillator.stop(currentTime + 0.3);
+                                
+                                currentTime += 0.5;
+                            }
+                            
+                            musicIcon.classList.remove('fa-play');
+                            musicIcon.classList.add('fa-pause');
+                            isMusicPlaying = true;
+                            showAudioNotification('Happy Birthday Melody! 🎶');
+                            
+                            setTimeout(() => {
+                                if (isMusicPlaying) {
+                                    musicIcon.classList.remove('fa-pause');
+                                    musicIcon.classList.add('fa-play');
+                                    isMusicPlaying = false;
+                                }
+                            }, 5000);
+                            
+                        } catch (error) {
+                            showAudioNotification('Could not play audio');
+                        }
+                    }
+                }
+            }
+            
+            // Create heart animation
             function createHearts() {
-                // First wave: 50 hearts in different positions
+                // First wave: 50 hearts
                 for (let i = 0; i < 50; i++) {
                     setTimeout(() => {
                         createSingleHeart(i);
-                    }, i * 50); // Staggered start
+                    }, i * 50);
                 }
                 
-                // Second wave: 30 more hearts after delay
+                // Second wave: 30 more hearts
                 setTimeout(() => {
                     for (let i = 0; i < 30; i++) {
                         setTimeout(() => {
@@ -655,7 +942,7 @@
                     }
                 }, 3000);
                 
-                // Continuous hearts after initial waves
+                // Continuous hearts
                 setTimeout(() => {
                     startContinuousHearts();
                 }, 4000);
@@ -666,36 +953,28 @@
                 heart.classList.add('heart');
                 heart.innerHTML = '❤️';
                 
-                // Random heart size classes
                 const sizes = ['heart-small', 'heart', 'heart-medium', 'heart-large'];
                 const sizeClass = sizes[Math.floor(Math.random() * sizes.length)];
                 heart.classList.add(sizeClass);
                 
-                // Random heart color classes
                 const colors = ['heart-red', 'heart-pink', 'heart-rose', 'heart-coral', 'heart-gold'];
                 const colorClass = colors[Math.floor(Math.random() * colors.length)];
                 heart.classList.add(colorClass);
                 
-                // Random position
                 const x = Math.random() * 100;
                 const y = Math.random() * 100 + 50;
                 
-                // Position
                 heart.style.left = `${x}%`;
                 heart.style.top = `${y}%`;
                 
-                // Random animation type
                 const animations = ['heartFloat', 'heartFloatLeft', 'heartFloatRight', 'heartFloatFast', 'heartFloatSlow', 'heartSpin'];
                 const animationType = animations[Math.floor(Math.random() * animations.length)];
-                
-                // Random animation duration
                 const duration = Math.random() * 3 + 2;
                 heart.style.animation = `${animationType} ${duration}s ease-out forwards`;
                 
                 heartContainer.appendChild(heart);
                 heartsCreated++;
                 
-                // Remove heart after animation
                 setTimeout(() => {
                     if (heart.parentNode) {
                         heart.remove();
@@ -708,7 +987,6 @@
                 heart.classList.add('heart', 'heart-giant', 'heart-red');
                 heart.innerHTML = '❤️';
                 
-                // Position at different edges
                 const positions = [
                     {x: 5, y: 5},
                     {x: 95, y: 5},
@@ -724,11 +1002,9 @@
                 heart.style.left = `${pos.x}%`;
                 heart.style.top = `${pos.y}%`;
                 
-                // Float to center
                 const duration = 4;
                 heart.style.animation = `heartFloat ${duration}s ease-out forwards`;
                 
-                // Add pulsing effect
                 setTimeout(() => {
                     heart.style.animation = `heartPulse 1s ease-in-out infinite`;
                 }, duration * 1000 - 1000);
@@ -736,7 +1012,6 @@
                 heartContainer.appendChild(heart);
                 heartsCreated++;
                 
-                // Remove heart after longer time
                 setTimeout(() => {
                     if (heart.parentNode) {
                         heart.remove();
@@ -745,180 +1020,68 @@
             }
             
             function startContinuousHearts() {
-                // Create hearts continuously
                 const continuousInterval = setInterval(() => {
                     if (heartsCreated > 0) {
                         createSingleHeart(heartsCreated);
                     }
                     
-                    // Stop after 200 total hearts
                     if (heartsCreated > 200) {
                         clearInterval(continuousInterval);
                     }
                 }, 300);
-                
-                // Also create occasional giant hearts
-                setInterval(() => {
-                    if (heartsCreated > 0 && Math.random() > 0.7) {
-                        const giantHeart = document.createElement('div');
-                        giantHeart.classList.add('heart', 'heart-giant', 'heart-pink');
-                        giantHeart.innerHTML = '❤️';
-                        
-                        // Random edge position
-                        const side = Math.floor(Math.random() * 4);
-                        let x, y;
-                        
-                        switch(side) {
-                            case 0: // top
-                                x = Math.random() * 100;
-                                y = -10;
-                                break;
-                            case 1: // right
-                                x = 110;
-                                y = Math.random() * 100;
-                                break;
-                            case 2: // bottom
-                                x = Math.random() * 100;
-                                y = 110;
-                                break;
-                            case 3: // left
-                                x = -10;
-                                y = Math.random() * 100;
-                                break;
-                        }
-                        
-                        giantHeart.style.left = `${x}%`;
-                        giantHeart.style.top = `${y}%`;
-                        
-                        // Float to random position
-                        const endX = Math.random() * 100;
-                        const endY = Math.random() * 100;
-                        
-                        giantHeart.animate([
-                            { 
-                                transform: `translate(0, 0) scale(0.5)`,
-                                opacity: 0 
-                            },
-                            { 
-                                transform: `translate(${endX - x}%, ${endY - y}%) scale(1)`,
-                                opacity: 1 
-                            },
-                            { 
-                                transform: `translate(${endX - x}%, ${endY - y}%) scale(1.2)`,
-                                opacity: 0 
-                            }
-                        ], {
-                            duration: 4000,
-                            easing: 'ease-out'
-                        });
-                        
-                        heartContainer.appendChild(giantHeart);
-                        heartsCreated++;
-                        
-                        // Remove after animation
-                        setTimeout(() => {
-                            if (giantHeart.parentNode) {
-                                giantHeart.remove();
-                            }
-                        }, 4000);
-                    }
-                }, 2000);
             }
             
-            // Button click event
+            // Main button click event
             magicButton.addEventListener('click', function() {
+                // Enable audio on first click
+                if (!audioEnabled) {
+                    audioEnabled = true;
+                    musicControl.classList.remove('disabled');
+                    showAudioNotification('Audio enabled! 🎵');
+                }
+                
                 // Disable button after click
                 magicButton.disabled = true;
                 magicButton.style.opacity = '0.7';
-                magicButton.innerHTML = '<i class="fas fa-heart"></i> Creating Infinite Hearts...';
+                magicButton.innerHTML = '<i class="fas fa-heart"></i> Creating Birthday Hearts...';
                 magicButton.style.fontSize = '1.6rem';
                 
-                // Start massive heart animation
+                // Start heart animation
                 createHearts();
                 
-                // Show message container after delay
+                // Show message container
                 setTimeout(() => {
                     messageContainer.classList.add('show');
                     
                     // Change button text
-                    magicButton.innerHTML = '<i class="fas fa-heart"></i> My Heart Overflows for You!';
+                    magicButton.innerHTML = '<i class="fas fa-birthday-cake"></i> Happy Birthday My Love!';
                     magicButton.style.animation = 'glow 1.5s infinite';
                     
-                    // Auto-play music after a short delay
+                    // Auto-play music
                     setTimeout(() => {
-                        if (!isMusicPlaying) {
-                            toggleMusic();
+                        if (audioEnabled && !isMusicPlaying) {
+                            playBirthdayMelody();
                         }
                     }, 1000);
                 }, 2000);
             });
             
-            // Music control
-            function toggleMusic() {
-                if (isMusicPlaying) {
-                    bgMusic.pause();
-                    musicIcon.classList.remove('fa-pause');
-                    musicIcon.classList.add('fa-play');
-                } else {
-                    // Try to play music (may require user interaction on some browsers)
-                    const playPromise = bgMusic.play();
-                    
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            // Music started successfully
-                            musicIcon.classList.remove('fa-play');
-                            musicIcon.classList.add('fa-pause');
-                            isMusicPlaying = true;
-                        }).catch(error => {
-                            // Auto-play was prevented, show instruction
-                            console.log("Auto-play prevented. User needs to interact first.");
-                            musicControl.style.background = "rgba(255, 100, 100, 0.3)";
-                            musicControl.title = "Click to play music (browser requires interaction)";
-                        });
-                    }
-                }
-                
-                isMusicPlaying = !isMusicPlaying;
-            }
-            
+            // Music control click event
             musicControl.addEventListener('click', function() {
-                toggleMusic();
+                playBirthdayMelody();
             });
             
-            // Add some random floating hearts even before clicking
-            const preHeartsInterval = setInterval(() => {
-                if (!magicButton.disabled && Math.random() > 0.9) {
-                    const preHeart = document.createElement('div');
-                    preHeart.classList.add('heart', 'heart-small', 'heart-pink');
-                    preHeart.innerHTML = '❤️';
-                    
-                    // Random position at bottom
-                    const x = Math.random() * 100;
-                    
-                    preHeart.style.left = `${x}%`;
-                    preHeart.style.top = `100%`;
-                    
-                    // Random animation
-                    const duration = Math.random() * 4 + 3;
-                    preHeart.style.animation = `heartFloat ${duration}s ease-out forwards`;
-                    
-                    heartContainer.appendChild(preHeart);
-                    
-                    // Remove heart after animation
-                    setTimeout(() => {
-                        if (preHeart.parentNode) {
-                            preHeart.remove();
-                        }
-                    }, duration * 1000);
+            // Initialize audio
+            initializeAudio();
+            
+            // Show initial instruction
+            setTimeout(() => {
+                if (!audioEnabled) {
+                    showAudioNotification('Click "Click for Birthday Hearts!" to start!');
                 }
             }, 2000);
             
-            // Stop pre-hearts when button is clicked
-            magicButton.addEventListener('click', () => {
-                clearInterval(preHeartsInterval);
-            });
-            
-            // Add some visual effects to the title
+            // Add visual effects to title
             const mainTitle = document.querySelector('.main-title');
             setInterval(() => {
                 mainTitle.style.animation = 'none';
