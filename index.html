@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love ❤️ - Heart Explosion Birthday</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #0a0a1a;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1.5s ease-out;
+        }
+        
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            background: linear-gradient(to right, #ff7eb3, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 126, 179, 0.3);
+        }
+        
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffccd5;
+            margin-top: 10px;
+        }
+        
+        .date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #a7c7e7;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+        }
+        
+        .gift-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .magic-button {
+            background: linear-gradient(135deg, #ff7eb3, #ff4d8d);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            padding: 20px 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(255, 126, 179, 0.4);
+            position: relative;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+        
+        .magic-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 126, 179, 0.6);
+        }
+        
+        .magic-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Enhanced Heart Container */
+        .heart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        /* Different heart types */
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff4d8d;
+            opacity: 0;
+            transform: scale(0.1);
+            filter: drop-shadow(0 0 10px rgba(255, 77, 141, 0.7));
+        }
+        
+        .heart-small {
+            font-size: 20px;
+            filter: drop-shadow(0 0 5px rgba(255, 77, 141, 0.5));
+        }
+        
+        .heart-medium {
+            font-size: 40px;
+            filter: drop-shadow(0 0 15px rgba(255, 77, 141, 0.8));
+        }
+        
+        .heart-large {
+            font-size: 60px;
+            filter: drop-shadow(0 0 20px rgba(255, 77, 141, 0.9));
+        }
+        
+        .heart-giant {
+            font-size: 80px;
+            filter: drop-shadow(0 0 25px rgba(255, 77, 141, 1));
+        }
+        
+        /* Different heart colors */
+        .heart-red { color: #ff4d8d; }
+        .heart-pink { color: #ff85a2; }
+        .heart-rose { color: #ff6384; }
+        .heart-coral { color: #ff7f50; }
+        .heart-gold { color: #ffd700; }
+        
+        .message-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .message-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #ff7eb3, #ff4d8d, #ff7eb3);
+        }
+        
+        .message-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ffccd5;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .message-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #e6e6fa;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .message-text.highlight {
+            color: #ffccd5;
+            font-size: 1.6rem;
+            text-align: center;
+            font-style: italic;
+            margin: 30px 0;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff7eb3;
+            margin-top: 40px;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 126, 179, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            border: 2px solid rgba(255, 126, 179, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .music-control:hover {
+            background: rgba(255, 126, 179, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .music-control i {
+            font-size: 24px;
+            color: #ff7eb3;
+        }
+        
+        .chinese-decoration {
+            position: absolute;
+            font-family: 'Dancing Script', cursive;
+            color: rgba(255, 126, 179, 0.3);
+            font-size: 2rem;
+            transform: rotate(-30deg);
+            z-index: 1;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .decoration-2 {
+            top: 15%;
+            right: 5%;
+            transform: rotate(30deg);
+        }
+        
+        .decoration-3 {
+            bottom: 20%;
+            left: 8%;
+            transform: rotate(-15deg);
+        }
+        
+        .decoration-4 {
+            bottom: 15%;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a7c7e7;
+            font-size: 1rem;
+        }
+        
+        /* Enhanced Animations */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Multiple heart animations */
+        @keyframes heartFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-400px) scale(1.5);
+            }
+        }
+        
+        @keyframes heartFloatLeft {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(0) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-350px) translateX(-100px) scale(1.3);
+            }
+        }
+        
+        @keyframes heartFloatRight {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(0) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-350px) translateX(100px) scale(1.3);
+            }
+        }
+        
+        @keyframes heartFloatFast {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-500px) scale(1.8);
+            }
+        }
+        
+        @keyframes heartFloatSlow {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-300px) scale(1.2);
+            }
+        }
+        
+        @keyframes heartSpin {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(0.1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-400px) rotate(720deg) scale(1.5);
+            }
+        }
+        
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 126, 179, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 126, 179, 0.8), 0 0 30px rgba(255, 126, 179, 0.6); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-title {
+                font-size: 4rem;
+            }
+            
+            .subtitle {
+                font-size: 2rem;
+            }
+            
+            .message-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .date {
+                font-size: 1.5rem;
+            }
+            
+            .magic-button {
+                font-size: 1.5rem;
+                padding: 15px 40px;
+            }
+            
+            .message-title {
+                font-size: 2.5rem;
+            }
+            
+            .message-text {
+                font-size: 1.2rem;
+            }
+            
+            .gift-section {
+                height: 400px;
+            }
+            
+            .chinese-decoration {
+                font-size: 1.5rem;
+            }
+            
+            .heart-giant { font-size: 60px; }
+            .heart-large { font-size: 45px; }
+            .heart-medium { font-size: 30px; }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .magic-button {
+                font-size: 1.3rem;
+                padding: 12px 30px;
+            }
+            
+            .message-container {
+                padding: 20px;
+            }
+            
+            .message-title {
+                font-size: 2rem;
+            }
+            
+            .message-text {
+                font-size: 1.1rem;
+            }
+            
+            .gift-section {
+                height: 350px;
+            }
+            
+            .chinese-decoration {
+                display: none;
+            }
+            
+            .heart-giant { font-size: 45px; }
+            .heart-large { font-size: 35px; }
+            .heart-medium { font-size: 25px; }
+            .heart { font-size: 20px; }
+            .heart-small { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background stars -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Chinese decorations -->
+    <div class="chinese-decoration decoration-1">愛</div>
+    <div class="chinese-decoration decoration-2">永恒</div>
+    <div class="chinese-decoration decoration-3">幸運</div>
+    <div class="chinese-decoration decoration-4">生日快樂</div>
+    
+    <div class="container">
+        <div class="title">
+            <h1 class="main-title">To My Beloved</h1>
+            <p class="subtitle">A heart-filled surprise made just for you</p>
+            <p class="date">January 20th ❤️</p>
+        </div>
+        
+        <div class="gift-section">
+            <button class="magic-button" id="magicButton">
+                <i class="fas fa-heart"></i> Open Your Heart Surprise
+            </button>
+            <div class="heart-container" id="heartContainer"></div>
+        </div>
+        
+        <div class="message-container" id="messageContainer">
+            <h2 class="message-title">My Dearest Love,</h2>
+            
+            <p class="message-text">There was a time when my world felt like an endless winter, cold and colorless. I wandered through days feeling alone, as if I was watching life from behind a frosted glass window.</p>
+            
+            <p class="message-text">Then you arrived, not with fanfare or dramatic entrance, but quietly, like the first sunrise after a long night. You didn't just walk into my life; you breathed warmth into it.</p>
+            
+            <p class="message-text highlight">I was lonely. I was depressed. The world felt heavy, and I had forgotten what happiness truly meant.</p>
+            
+            <p class="message-text">But you, my love, you changed everything. You didn't fix me—you showed me that I wasn't broken. You didn't save me—you taught me how to save myself. With your smile, your laughter, your gentle presence, you turned my grayscale world into a symphony of colors.</p>
+            
+            <p class="message-text">Every moment with you feels like a gift I don't deserve but will cherish forever. You are the miracle I never knew to ask for, the answer to questions I was too afraid to voice.</p>
+            
+            <p class="message-text">On your birthday, I want you to know that you are the greatest gift I've ever received. You transformed my life when I needed it most, and for that, I will be eternally grateful.</p>
+            
+            <p class="message-text highlight">Happy Birthday to the woman who taught me how to feel alive again. You are my sunrise, my warmth, my everything.</p>
+            
+            <div class="signature">Forever Yours</div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with infinite love and countless hearts</p>
+            <p>This digital gift is yours forever, just like my heart</p>
+        </div>
+    </div>
+    
+    <!-- Music control -->
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-play" id="musicIcon"></i>
+    </div>
+    
+    <!-- Audio element for background music -->
+    <audio id="bgMusic" loop>
+        <source src="https://audio-variant-previews.envatousercontent.com/m4a/2f/6b/fe/d6/15/v1_e11/e117tyxf.m4a" type="audio/mpeg">
+        <!-- Fallback music source -->
+        <source src="https://assets.mixkit.co/music/preview/mixkit-celestial-recognition-919.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create stars background
+            createStars();
+            
+            // Elements
+            const magicButton = document.getElementById('magicButton');
+            const heartContainer = document.getElementById('heartContainer');
+            const messageContainer = document.getElementById('messageContainer');
+            const musicControl = document.getElementById('musicControl');
+            const musicIcon = document.getElementById('musicIcon');
+            const bgMusic = document.getElementById('bgMusic');
+            let isMusicPlaying = false;
+            let heartsCreated = 0;
+            
+            // Create stars for background
+            function createStars() {
+                const starsContainer = document.getElementById('stars');
+                const starCount = 200; // Increased star count
+                
+                for (let i = 0; i < starCount; i++) {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+                    
+                    // Random position
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    
+                    // Random size
+                    const size = Math.random() * 3 + 1;
+                    
+                    // Random twinkle delay
+                    const delay = Math.random() * 3;
+                    
+                    star.style.left = `${x}%`;
+                    star.style.top = `${y}%`;
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+                    star.style.animationDelay = `${delay}s`;
+                    
+                    starsContainer.appendChild(star);
+                }
+            }
+            
+            // Create heart animation with MANY more hearts
+            function createHearts() {
+                // First wave: 50 hearts in different positions
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        createSingleHeart(i);
+                    }, i * 50); // Staggered start
+                }
+                
+                // Second wave: 30 more hearts after delay
+                setTimeout(() => {
+                    for (let i = 0; i < 30; i++) {
+                        setTimeout(() => {
+                            createSingleHeart(i + 50);
+                        }, i * 80);
+                    }
+                }, 1500);
+                
+                // Third wave: Giant hearts
+                setTimeout(() => {
+                    for (let i = 0; i < 15; i++) {
+                        setTimeout(() => {
+                            createGiantHeart(i);
+                        }, i * 200);
+                    }
+                }, 3000);
+                
+                // Continuous hearts after initial waves
+                setTimeout(() => {
+                    startContinuousHearts();
+                }, 4000);
+            }
+            
+            function createSingleHeart(index) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                
+                // Random heart size classes
+                const sizes = ['heart-small', 'heart', 'heart-medium', 'heart-large'];
+                const sizeClass = sizes[Math.floor(Math.random() * sizes.length)];
+                heart.classList.add(sizeClass);
+                
+                // Random heart color classes
+                const colors = ['heart-red', 'heart-pink', 'heart-rose', 'heart-coral', 'heart-gold'];
+                const colorClass = colors[Math.floor(Math.random() * colors.length)];
+                heart.classList.add(colorClass);
+                
+                // Random position
+                const x = Math.random() * 100;
+                const y = Math.random() * 100 + 50;
+                
+                // Position
+                heart.style.left = `${x}%`;
+                heart.style.top = `${y}%`;
+                
+                // Random animation type
+                const animations = ['heartFloat', 'heartFloatLeft', 'heartFloatRight', 'heartFloatFast', 'heartFloatSlow', 'heartSpin'];
+                const animationType = animations[Math.floor(Math.random() * animations.length)];
+                
+                // Random animation duration
+                const duration = Math.random() * 3 + 2;
+                heart.style.animation = `${animationType} ${duration}s ease-out forwards`;
+                
+                heartContainer.appendChild(heart);
+                heartsCreated++;
+                
+                // Remove heart after animation
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.remove();
+                    }
+                }, duration * 1000);
+            }
+            
+            function createGiantHeart(index) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart', 'heart-giant', 'heart-red');
+                heart.innerHTML = '❤️';
+                
+                // Position at different edges
+                const positions = [
+                    {x: 5, y: 5},
+                    {x: 95, y: 5},
+                    {x: 5, y: 95},
+                    {x: 95, y: 95},
+                    {x: 50, y: 5},
+                    {x: 50, y: 95},
+                    {x: 5, y: 50},
+                    {x: 95, y: 50}
+                ];
+                
+                const pos = positions[index % positions.length];
+                heart.style.left = `${pos.x}%`;
+                heart.style.top = `${pos.y}%`;
+                
+                // Float to center
+                const duration = 4;
+                heart.style.animation = `heartFloat ${duration}s ease-out forwards`;
+                
+                // Add pulsing effect
+                setTimeout(() => {
+                    heart.style.animation = `heartPulse 1s ease-in-out infinite`;
+                }, duration * 1000 - 1000);
+                
+                heartContainer.appendChild(heart);
+                heartsCreated++;
+                
+                // Remove heart after longer time
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.remove();
+                    }
+                }, 8000);
+            }
+            
+            function startContinuousHearts() {
+                // Create hearts continuously
+                const continuousInterval = setInterval(() => {
+                    if (heartsCreated > 0) {
+                        createSingleHeart(heartsCreated);
+                    }
+                    
+                    // Stop after 200 total hearts
+                    if (heartsCreated > 200) {
+                        clearInterval(continuousInterval);
+                    }
+                }, 300);
+                
+                // Also create occasional giant hearts
+                setInterval(() => {
+                    if (heartsCreated > 0 && Math.random() > 0.7) {
+                        const giantHeart = document.createElement('div');
+                        giantHeart.classList.add('heart', 'heart-giant', 'heart-pink');
+                        giantHeart.innerHTML = '❤️';
+                        
+                        // Random edge position
+                        const side = Math.floor(Math.random() * 4);
+                        let x, y;
+                        
+                        switch(side) {
+                            case 0: // top
+                                x = Math.random() * 100;
+                                y = -10;
+                                break;
+                            case 1: // right
+                                x = 110;
+                                y = Math.random() * 100;
+                                break;
+                            case 2: // bottom
+                                x = Math.random() * 100;
+                                y = 110;
+                                break;
+                            case 3: // left
+                                x = -10;
+                                y = Math.random() * 100;
+                                break;
+                        }
+                        
+                        giantHeart.style.left = `${x}%`;
+                        giantHeart.style.top = `${y}%`;
+                        
+                        // Float to random position
+                        const endX = Math.random() * 100;
+                        const endY = Math.random() * 100;
+                        
+                        giantHeart.animate([
+                            { 
+                                transform: `translate(0, 0) scale(0.5)`,
+                                opacity: 0 
+                            },
+                            { 
+                                transform: `translate(${endX - x}%, ${endY - y}%) scale(1)`,
+                                opacity: 1 
+                            },
+                            { 
+                                transform: `translate(${endX - x}%, ${endY - y}%) scale(1.2)`,
+                                opacity: 0 
+                            }
+                        ], {
+                            duration: 4000,
+                            easing: 'ease-out'
+                        });
+                        
+                        heartContainer.appendChild(giantHeart);
+                        heartsCreated++;
+                        
+                        // Remove after animation
+                        setTimeout(() => {
+                            if (giantHeart.parentNode) {
+                                giantHeart.remove();
+                            }
+                        }, 4000);
+                    }
+                }, 2000);
+            }
+            
+            // Button click event
+            magicButton.addEventListener('click', function() {
+                // Disable button after click
+                magicButton.disabled = true;
+                magicButton.style.opacity = '0.7';
+                magicButton.innerHTML = '<i class="fas fa-heart"></i> Creating Infinite Hearts...';
+                magicButton.style.fontSize = '1.6rem';
+                
+                // Start massive heart animation
+                createHearts();
+                
+                // Show message container after delay
+                setTimeout(() => {
+                    messageContainer.classList.add('show');
+                    
+                    // Change button text
+                    magicButton.innerHTML = '<i class="fas fa-heart"></i> My Heart Overflows for You!';
+                    magicButton.style.animation = 'glow 1.5s infinite';
+                    
+                    // Auto-play music after a short delay
+                    setTimeout(() => {
+                        if (!isMusicPlaying) {
+                            toggleMusic();
+                        }
+                    }, 1000);
+                }, 2000);
+            });
+            
+            // Music control
+            function toggleMusic() {
+                if (isMusicPlaying) {
+                    bgMusic.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                } else {
+                    // Try to play music (may require user interaction on some browsers)
+                    const playPromise = bgMusic.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            // Music started successfully
+                            musicIcon.classList.remove('fa-play');
+                            musicIcon.classList.add('fa-pause');
+                            isMusicPlaying = true;
+                        }).catch(error => {
+                            // Auto-play was prevented, show instruction
+                            console.log("Auto-play prevented. User needs to interact first.");
+                            musicControl.style.background = "rgba(255, 100, 100, 0.3)";
+                            musicControl.title = "Click to play music (browser requires interaction)";
+                        });
+                    }
+                }
+                
+                isMusicPlaying = !isMusicPlaying;
+            }
+            
+            musicControl.addEventListener('click', function() {
+                toggleMusic();
+            });
+            
+            // Add some random floating hearts even before clicking
+            const preHeartsInterval = setInterval(() => {
+                if (!magicButton.disabled && Math.random() > 0.9) {
+                    const preHeart = document.createElement('div');
+                    preHeart.classList.add('heart', 'heart-small', 'heart-pink');
+                    preHeart.innerHTML = '❤️';
+                    
+                    // Random position at bottom
+                    const x = Math.random() * 100;
+                    
+                    preHeart.style.left = `${x}%`;
+                    preHeart.style.top = `100%`;
+                    
+                    // Random animation
+                    const duration = Math.random() * 4 + 3;
+                    preHeart.style.animation = `heartFloat ${duration}s ease-out forwards`;
+                    
+                    heartContainer.appendChild(preHeart);
+                    
+                    // Remove heart after animation
+                    setTimeout(() => {
+                        if (preHeart.parentNode) {
+                            preHeart.remove();
+                        }
+                    }, duration * 1000);
+                }
+            }, 2000);
+            
+            // Stop pre-hearts when button is clicked
+            magicButton.addEventListener('click', () => {
+                clearInterval(preHeartsInterval);
+            });
+            
+            // Add some visual effects to the title
+            const mainTitle = document.querySelector('.main-title');
+            setInterval(() => {
+                mainTitle.style.animation = 'none';
+                setTimeout(() => {
+                    mainTitle.style.animation = 'glow 3s infinite alternate';
+                }, 10);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
